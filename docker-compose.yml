@@ -1,0 +1,19 @@
+version: "3"
+services:
+  client:
+    image: client
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - "my-app"
+  server:
+    image: server
+    ports:
+      - "5000:5000"
+    networks:
+      - "my-app"
+networks:
+  my-app:
+    driver: bridge
+  
